@@ -1,2 +1,6 @@
 language: java
+<<<<<<< HEAD
 script: mvn deploy -Pnexus
+=======
+script: mvn deploy
+>>>>>>> branch 'master' of git@github.com:seedboxer/bencode.git
