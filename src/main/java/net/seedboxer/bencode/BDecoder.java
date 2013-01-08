@@ -1,3 +1,24 @@
+/*******************************************************************************
+ * BDecoder.java
+ *
+ * Copyright (c) 2012 SeedBoxer Team.
+ *
+ * This file is part of SeedBoxer.
+ *
+ * SeedBoxer is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * SeedBoxer is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with SeedBoxer.  If not, see <http ://www.gnu.org/licenses/>.
+ ******************************************************************************/
+
 package net.seedboxer.bencode;
 
 import java.io.BufferedInputStream;
@@ -12,6 +33,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * A set of utility methods to decode a bencoded array of byte into a Map.
+ * integer are represented as Long, String as byte[], dictionnaries as Map, and list as List.
+ *
+ * @author TdC_VgA
+ * @author Jorge Davison (jdavisonc)
+ *
+ */
 public class BDecoder {
 
 	public static final String BYTE_ENCODING = "ISO-8859-1";
