@@ -26,22 +26,21 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Map;
 
-import org.junit.Test;
+public class TorrentUtils {
 
-public class BDecoderTest {
+	@SuppressWarnings("rawtypes")
+	public static String getTorrentName(File torrent) throws IOException {
+		FileInputStream is = new FileInputStream(torrent);
+		BufferedInputStream bufferedInputStream = new BufferedInputStream(is);
+		try {
+			Map bdecode = BDecoder.decode(bufferedInputStream);
 
-	@Test
-	public void shouldReadRealTorrentFile() throws IOException {
-
-		BDecoder decoder = new BDecoder();
-		Map bdecode = decoder.decodeStream(new BufferedInputStream( new FileInputStream(new File("src/test/resources/Lockout.UNRATED.720p.BluRay.X264-BLOW.torrent"))));
-
-		System.out.println(bdecode);
-
-		Map map = (Map) bdecode.get("info");
-		System.out.println(map);
-		System.out.println(new String((byte[]) map.get("name")));
-
+			Map map = (Map) bdecode.get("info");
+			return new String((byte[]) map.get("name"));
+		} finally {
+			bufferedInputStream.close();
+			is.close();
+		}
 	}
 
 }
