@@ -34,14 +34,11 @@ public class BDecoderTest {
 	public void shouldReadRealTorrentFile() throws IOException {
 
 		BDecoder decoder = new BDecoder();
-		Map bdecode = decoder.decodeStream(new BufferedInputStream( new FileInputStream(new File("src/test/resources/Lockout.UNRATED.720p.BluRay.X264-BLOW.torrent"))));
+		Map bdecode = decoder.decodeStream(new BufferedInputStream( new FileInputStream(new File("src/test/resources/AFEF3A536782DFFCE34C38BA0405FBB44E3CFDAC.torrent"))));
 
 		System.out.println(bdecode);
 
 		Map map = (Map) bdecode.get("info");
-		System.out.println(map);
-		System.out.println(new String((byte[]) map.get("name")));
-
 	}
 
 }
